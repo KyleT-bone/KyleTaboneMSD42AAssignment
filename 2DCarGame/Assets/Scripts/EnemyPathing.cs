@@ -14,16 +14,6 @@ public class EnemyPathing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject go = GameObject.Find("wibble");
-        if (go)
-        {
-            Debug.Log(go.name);
-        }
-        else
-        {
-            Debug.Log("No game object called wibble found!");
-        }
-
         // Get the List waypoints from waveConfig
        waypoints = waveConfig.GetWaypoints();
 
