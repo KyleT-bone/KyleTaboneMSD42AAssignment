@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyPathing : MonoBehaviour
 {
 
-    [SerializeField] List<Transform> waypoints;
+    [SerializeField] public List<Transform> waypoints = new List<Transform>();
 
     [SerializeField] WaveConfig waveConfig;
 
@@ -14,8 +14,18 @@ public class EnemyPathing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject go = GameObject.Find("wibble");
+        if (go)
+        {
+            Debug.Log(go.name);
+        }
+        else
+        {
+            Debug.Log("No game object called wibble found!");
+        }
+
         // Get the List waypoints from waveConfig
-        waypoints = waveConfig.GetWaypoints();
+       waypoints = waveConfig.GetWaypoints();
 
         // Set the start position of Enemy to the 1st waypoint position
         transform.position = waypoints[waypointIndex].transform.position;
