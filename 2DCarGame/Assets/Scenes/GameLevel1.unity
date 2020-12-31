@@ -301,7 +301,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &707482940
 GameObject:
@@ -336,6 +336,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8ec491e219dde974881729e7307e6072, type: 2}
   - {fileID: 11400000, guid: 3bcec6eed2b810f4180b662ef1a0498f, type: 2}
   - {fileID: 11400000, guid: 2ade79fe67a60e04ba66a65e37c19b76, type: 2}
+  - {fileID: 11400000, guid: 0249d06f0fbafdd4693731914b7fe7eb, type: 2}
+  - {fileID: 11400000, guid: 41fc09a28277a1f448567440a55a0cbd, type: 2}
   looping: 1
 --- !u!4 &707482942
 Transform:
@@ -349,7 +351,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1791136964
 GameObject:
@@ -415,11 +417,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1791136964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.81, z: -13.213462}
-  m_LocalScale: {x: 8.865, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -8.38, z: -13.213462}
+  m_LocalScale: {x: 21.11, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1649680029880772913
 PrefabInstance:
@@ -434,7 +436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1649680029263410415, guid: 6d71777574741b841b54c2b720e2c013, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1649680029263410415, guid: 6d71777574741b841b54c2b720e2c013, type: 3}
       propertyPath: m_LocalPosition.x
@@ -598,9 +600,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5461678982856339771, guid: db37e808cc2d3da40a8bd200bc501b9c, type: 3}
+      propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6235924281731146829, guid: db37e808cc2d3da40a8bd200bc501b9c, type: 3}
       propertyPath: m_Name
       value: BugattiPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6235924281731146829, guid: db37e808cc2d3da40a8bd200bc501b9c, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db37e808cc2d3da40a8bd200bc501b9c, type: 3}
@@ -609,20 +619,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6235924281731146829, guid: db37e808cc2d3da40a8bd200bc501b9c, type: 3}
   m_PrefabInstance: {fileID: 2241462035069064964}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2241462035069064966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2241462035069064965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93075d8dfeec7c84b99a60472f5c5d18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 10
-  health: 200
 --- !u!60 &2241462035069064969
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -633,7 +629,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -753,7 +749,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6217766660446010713, guid: 603489a1f6bf83e4db6118a1297e7671, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6217766660446010713, guid: 603489a1f6bf83e4db6118a1297e7671, type: 3}
       propertyPath: m_LocalPosition.x
@@ -810,7 +806,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1411435357223040213, guid: 57cda3047f60f6f41ba04ea409a1023a, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1411435357223040213, guid: 57cda3047f60f6f41ba04ea409a1023a, type: 3}
       propertyPath: m_LocalPosition.x

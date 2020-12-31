@@ -11,7 +11,11 @@ GameObject:
   - component: {fileID: 2757515956644937324}
   - component: {fileID: 1630494620699983585}
   - component: {fileID: 6854346098686316142}
-  m_Layer: 0
+  - component: {fileID: 6762165628219818250}
+  - component: {fileID: 8716848922005569532}
+  - component: {fileID: 1067519939808908044}
+  - component: {fileID: -3703457169734686898}
+  m_Layer: 9
   m_Name: EnemyBike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,3 +101,124 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoints: []
   waveConfig: {fileID: 0}
+--- !u!114 &6762165628219818250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9065521894081932923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f841729a6abc4a45bbb248ccf11fca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+--- !u!60 &8716848922005569532
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9065521894081932923}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.76, y: 2.36}
+    newSize: {x: 1.76, y: 2.36}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.5, y: -0.64}
+      - {x: 0.5, y: -0.59}
+      - {x: 0.39999998, y: -0.55}
+      - {x: 0.29, y: -0.61}
+      - {x: 0.28, y: -0.59}
+      - {x: 0.45999998, y: -0.52}
+      - {x: 0.42999998, y: -0.47}
+      - {x: 0.39, y: -0.45999998}
+      - {x: 0.45999998, y: -0.37}
+      - {x: 0.37, y: -0.35999998}
+      - {x: 0.28, y: -0.41}
+      - {x: 0.26999998, y: -0.04}
+      - {x: 0.24, y: 0}
+      - {x: 0.22, y: 0.31}
+      - {x: 0.24, y: 0.59}
+      - {x: 0.22999999, y: 0.72999996}
+      - {x: 0.16, y: 0.84999996}
+      - {x: 0.19999999, y: 0.96}
+      - {x: 0.16, y: 1.06}
+      - {x: 0.04, y: 1.09}
+      - {x: -0.099999994, y: 1.09}
+      - {x: -0.21, y: 0.98999995}
+      - {x: -0.17, y: 0.94}
+      - {x: -0.16, y: 0.83}
+      - {x: -0.24, y: 0.7}
+      - {x: -0.21, y: 0.44}
+      - {x: -0.26999998, y: 0.22999999}
+      - {x: -0.25, y: 0.12}
+      - {x: -0.29999998, y: -0.37}
+      - {x: -0.39, y: -0.37}
+      - {x: -0.42999998, y: -0.39999998}
+      - {x: -0.44, y: -0.52}
+      - {x: -0.41, y: -0.53}
+      - {x: -0.5, y: -0.59999996}
+      - {x: -0.48999998, y: -0.64}
+      - {x: -0.42, y: -0.7}
+      - {x: -0.29, y: -0.72999996}
+      - {x: -0.22999999, y: -0.83}
+      - {x: -0.06, y: -1.02}
+      - {x: 0.06, y: -1.02}
+      - {x: 0.13, y: -0.91999996}
+      - {x: 0.28, y: -0.77}
+      - {x: 0.39, y: -0.71999997}
+    - - {x: -0.35999998, y: -0.32999998}
+      - {x: -0.34, y: -0.35}
+      - {x: -0.31, y: -0.34}
+      - {x: -0.31, y: -0.26999998}
+      - {x: -0.32999998, y: -0.25}
+      - {x: -0.35999998, y: -0.26}
+--- !u!114 &1067519939808908044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9065521894081932923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b65622342045d141b3b6949b7e54c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
+--- !u!50 &-3703457169734686898
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9065521894081932923}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

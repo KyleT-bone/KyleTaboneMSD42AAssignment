@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1852692789454896696}
   - component: {fileID: 3192337145847062384}
+  - component: {fileID: 5461678982856339771}
   m_Layer: 0
   m_Name: BugattiPlayer
   m_TagString: Untagged
@@ -82,3 +83,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5461678982856339771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6235924281731146829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93075d8dfeec7c84b99a60472f5c5d18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 10
+  health: 200
