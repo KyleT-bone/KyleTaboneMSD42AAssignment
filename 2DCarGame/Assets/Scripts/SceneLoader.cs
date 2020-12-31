@@ -8,7 +8,13 @@ public class SceneLoader : MonoBehaviour
     public void LoadGame()
     {
         // To go to the game
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("GameLevel1");
+    }
+
+    public void LoadMainMenu()
+    {
+        // To go to the MainMenu
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame()

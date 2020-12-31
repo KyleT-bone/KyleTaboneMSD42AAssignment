@@ -22,6 +22,13 @@ public class Enemy : MonoBehaviour
     {
         // Access the DamageDealer class from "otherObject" which hits enemy and reduce health accordingly
         DamageDealer dmgDealer = otherObject.gameObject.GetComponent<DamageDealer>();
+
+        // If there is no dmgDealer in otherObject, end the method
+        if (!dmgDealer) // if (dmgDealer == null)
+        {
+            return;
+        }
+
         ProcessHit(dmgDealer);
     }
 

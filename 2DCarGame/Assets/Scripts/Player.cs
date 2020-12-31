@@ -76,6 +76,12 @@ public class Player : MonoBehaviour
          reduce health accordingly*/
         DamageDealer dmgDealer = otherObject.gameObject.GetComponent<DamageDealer>();
 
+        // If there is no dmgDealer in otherObject, end the method
+        if (!dmgDealer) // if (dmgDealer == null)
+        {
+            return;
+        }
+
         ProcessHit(dmgDealer);
 }
 
@@ -86,6 +92,8 @@ private void ProcessHit(DamageDealer dmgDealer)
 
     if (health <= 0)
     {
+        // To go to the GameOver
+        SceneManager.LoadScene("GameOver");
         Destroy(gameObject);
     }
 }
