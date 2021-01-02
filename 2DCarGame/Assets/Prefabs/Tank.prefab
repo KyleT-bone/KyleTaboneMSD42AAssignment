@@ -101,6 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoints: []
   waveConfig: {fileID: 0}
+  deathVFX: {fileID: 7115725766691517078, guid: a2c0ac4b01e20ff4a9cb9c7ba50bc10a, type: 3}
+  explosionDuration: 0
 --- !u!114 &7024215760426111888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,6 +121,8 @@ MonoBehaviour:
   maxTimeBetweenShots: 3
   enemyBulletPrefab: {fileID: 5963935402984166565, guid: d6cda1f8dbfc7e440b80231cf1c33d48, type: 3}
   enemyBulletSpeed: 10
+  deathVFX: {fileID: 7115725766691517078, guid: a2c0ac4b01e20ff4a9cb9c7ba50bc10a, type: 3}
+  explosionDuration: 1
 --- !u!60 &6193818656252667836
 PolygonCollider2D:
   m_ObjectHideFlags: 0

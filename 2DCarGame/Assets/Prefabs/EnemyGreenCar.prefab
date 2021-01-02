@@ -101,6 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoints: []
   waveConfig: {fileID: 0}
+  deathVFX: {fileID: 7115725766691517078, guid: a2c0ac4b01e20ff4a9cb9c7ba50bc10a, type: 3}
+  explosionDuration: 0
 --- !u!114 &-1007535497524169093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  deathVFX: {fileID: 7115725766691517078, guid: a2c0ac4b01e20ff4a9cb9c7ba50bc10a, type: 3}
+  explosionDuration: 1
 --- !u!60 &7522479949933861988
 PolygonCollider2D:
   m_ObjectHideFlags: 0

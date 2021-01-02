@@ -9,6 +9,10 @@ public class EnemyPathing : MonoBehaviour
 
     [SerializeField] WaveConfig waveConfig;
 
+    // To make sure the effect won't show, if it's not applied, an error will show
+    [SerializeField] GameObject deathVFX;
+    float explosionDuration = 0f;
+
     // Saves the waypoint in which we want to go
     int waypointIndex = 0;
     // Start is called before the first frame update
@@ -53,7 +57,12 @@ public class EnemyPathing : MonoBehaviour
         // If enemy reaches last waypoint
         else
         {
+            // Destroy the enemy
             Destroy(gameObject);
+            // Instantiate explosion effects
+            GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
+            // Destroy after 1 second
+            Destroy(explosion, explosionDuration);
         }
     }
 

@@ -14,8 +14,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] float maxTimeBetweenShots = 3f;
 
     [SerializeField] GameObject enemyBulletPrefab;
-
     [SerializeField] float enemyBulletSpeed = 0.3f;
+
+    [SerializeField] GameObject deathVFX;
+    [SerializeField] float explosionDuration = 1f;
 
     // Reduces health whenever enemy collides with a gameObject which has a DamageDealer component
     private void OnTriggerEnter2D(Collider2D otherObject)
@@ -39,8 +41,18 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        // Destroy the enemy
+        Destroy(gameObject);
+        // Instantiate explosion effects
+        GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
+        // Destroy after 1 second
+        Destroy(explosion, explosionDuration);
     }
 
     void Start()
