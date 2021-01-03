@@ -1,17 +1,20 @@
-﻿using System.Collections;
+﻿using TMPro;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyPathing : MonoBehaviour
 {
-
     [SerializeField] public List<Transform> waypoints = new List<Transform>();
 
     [SerializeField] WaveConfig waveConfig;
-
     // To make sure the effect won't show, if it's not applied, an error will show
     [SerializeField] GameObject deathVFX;
     float explosionDuration = 0f;
+
+    int scoreValue = 5;
+
+    
 
     // Saves the waypoint in which we want to go
     int waypointIndex = 0;
@@ -59,6 +62,8 @@ public class EnemyPathing : MonoBehaviour
         {
             // Destroy the enemy
             Destroy(gameObject);
+            // Add scoreValue to GameSession score
+            FindObjectOfType<GameSession>().AddToScore(scoreValue);
             // Instantiate explosion effects
             GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
             // Destroy after 1 second

@@ -102,7 +102,6 @@ MonoBehaviour:
   waypoints: []
   waveConfig: {fileID: 0}
   deathVFX: {fileID: 7115725766691517078, guid: a2c0ac4b01e20ff4a9cb9c7ba50bc10a, type: 3}
-  explosionDuration: 1
 --- !u!114 &6762165628219818250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +117,8 @@ MonoBehaviour:
   health: 1
   deathVFX: {fileID: 7115725766691517078, guid: a2c0ac4b01e20ff4a9cb9c7ba50bc10a, type: 3}
   explosionDuration: 1
+  enemyDeathSound: {fileID: 8300000, guid: 10cf61334fa080948ae8ebc614568c18, type: 3}
+  enemyDeathSoundVolume: 0.482
 --- !u!60 &8716848922005569532
 PolygonCollider2D:
   m_ObjectHideFlags: 0

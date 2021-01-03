@@ -27,8 +27,8 @@ public class Player : MonoBehaviour
     {
         Camera gameCamera = Camera.main;
 
-        xMin = gameCamera.ViewportToWorldPoint(new Vector3(0.25f, 0, 0)).x + padding;
-        xMax = gameCamera.ViewportToWorldPoint(new Vector3(0.75f, 0, 0)).x - padding;
+        xMin = gameCamera.ViewportToWorldPoint(new Vector3(0.1f, 0, 0)).x + padding;
+        xMax = gameCamera.ViewportToWorldPoint(new Vector3(0.9f, 0, 0)).x - padding;
 
         yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0.1f, 0)).y + padding;
         yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 0.2f, 0)).y - padding;

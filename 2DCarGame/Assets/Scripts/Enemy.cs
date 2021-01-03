@@ -19,6 +19,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject deathVFX;
     [SerializeField] float explosionDuration = 1f;
 
+    [SerializeField] AudioClip enemyDeathSound;
+    // Allows the variable to be set in the Inspector from 0 to 1
+    [SerializeField] [Range(0, 1)] float enemyDeathSoundVolume = 0.75f;
+
+    [SerializeField] AudioClip shootSound;
+    [SerializeField] [Range(0, 1)] float shootSoundVolume = 0.25f;
+
     // Reduces health whenever enemy collides with a gameObject which has a DamageDealer component
     private void OnTriggerEnter2D(Collider2D otherObject)
     {
@@ -51,6 +58,8 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
         // Instantiate explosion effects
         GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
+
+        AudioSource.PlayClipAtPoint(enemyDeathSound, Camera.main.transform.position, enemyDeathSoundVolume);
         // Destroy after 1 second
         Destroy(explosion, explosionDuration);
     }
@@ -83,7 +92,9 @@ public class Enemy : MonoBehaviour
     {
         // Spawn an enemyBullet at Enemy position
         GameObject enemyBullet = Instantiate(enemyBulletPrefab, transform.position, Quaternion.identity);
-
+        // Shoot bullet downwards: -enemyBulletSpeed
         enemyBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -enemyBulletSpeed);
+        // Play clip when Enemy fires
+        AudioSource.PlayClipAtPoint(shootSound, Camera.main.transform.position, shootSoundVolume);
     }
 }
