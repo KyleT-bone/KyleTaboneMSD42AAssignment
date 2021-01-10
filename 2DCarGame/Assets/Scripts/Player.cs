@@ -10,6 +10,10 @@ public class Player : MonoBehaviour
 
     [SerializeField] float health = 50f;
 
+    [SerializeField] AudioClip playerDeathSound;
+    // Allows the variable to be set in the Inspector from 0 to 1
+    [SerializeField] [Range(0, 1)] float playerDeathSoundVolume = 0.75f;
+
     /*Coroutine firingCoroutine;*/
 
     float xMin, xMax, yMin, yMax;
@@ -19,11 +23,11 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetUpMoveBoundaries();
+        ViewPortToWorldPoint();
         //StartCoroutine(PrintAndWait());
     }
 
-    private void SetUpMoveBoundaries()
+    private void ViewPortToWorldPoint()
     {
         Camera gameCamera = Camera.main;
 
@@ -83,62 +87,25 @@ public class Player : MonoBehaviour
         }
 
         ProcessHit(dmgDealer);
-}
+    }
 
 // Whenever PricessHit() is called, send us the DamageDealer details
-private void ProcessHit(DamageDealer dmgDealer)
-{
-    health -= dmgDealer.GetDamage();
+    private void ProcessHit(DamageDealer dmgDealer)
+    {
+        health -= dmgDealer.GetDamage();
 
-    if (health <= 0)
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+    private void Die()
     {
         // To go to the GameOver
-        SceneManager.LoadScene("GameOver");
         Destroy(gameObject);
+        AudioSource.PlayClipAtPoint(playerDeathSound, Camera.main.transform.position, playerDeathSoundVolume);
+        FindObjectOfType<SceneLoader>().LoadGameOver();
     }
+
+
 }
-
-    // Coroutine Example
-    /*private IEnumerator PrintAndWait()
-    {
-        print("Message 1");
-        yield return new WaitForSeconds(10);
-        print("Message 2 after 10 seconds");
-        yield return new WaitForSeconds(20);
-        print("Message 2 after 30 seconds");
-    }*/
-
-    // If coroutine is started, don't start another one
-
-    /*private IEnumerator FireContinously()
-    {
-        while (true) // While coroutine is running
-        {
-            // Create an instance of laserPrefab at the position of the Player Ship
-            GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity) as GameObject;
-            // Add a velocity to the laser in the y-axis
-            laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, laserspeed);
-            // Wait x seconds before repeating
-            yield return new WaitForSeconds(laserFiringTime);
-        }
-    }*/
-
-    /*private void Fire()
-    {
-        if (!coroutineStarted) // coroutineStarted == false
-        {
-            if (Input.GetButtonDown("Fire1"))
-            {
-                firingCoroutine = StartCoroutine(FireContinously());
-                coroutineStarted = true;
-            }
-        }
-
-        if (Input.GetButtonUp("Fire1"))
-        {
-            StopCoroutine(firingCoroutine);
-            coroutineStarted = false;
-        }*/
-
-        // If fire button is pressed, start Coroutine to fire
-    }

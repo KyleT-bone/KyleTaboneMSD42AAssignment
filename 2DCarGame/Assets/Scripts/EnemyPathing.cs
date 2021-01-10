@@ -12,6 +12,9 @@ public class EnemyPathing : MonoBehaviour
     [SerializeField] GameObject deathVFX;
     float explosionDuration = 0f;
 
+    [SerializeField] AudioClip scoreSound;
+    [SerializeField] [Range(0, 1)] float scoreSoundVolume = 0.25f;
+
     int scoreValue = 5;
 
     
@@ -68,6 +71,8 @@ public class EnemyPathing : MonoBehaviour
             GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
             // Destroy after 1 second
             Destroy(explosion, explosionDuration);
+
+            AudioSource.PlayClipAtPoint(scoreSound, Camera.main.transform.position, scoreSoundVolume);
         }
     }
 

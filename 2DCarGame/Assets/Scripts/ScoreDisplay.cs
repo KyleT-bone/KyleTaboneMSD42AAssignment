@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class ScoreDisplay : MonoBehaviour
 {
-    
-
     // Updates the text in UI
     Text scoreText;
     GameSession gameSession;
