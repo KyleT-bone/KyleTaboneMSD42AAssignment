@@ -101,7 +101,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoints: []
   waveConfig: {fileID: 0}
-  deathVFX: {fileID: 7115725766691517078, guid: a2c0ac4b01e20ff4a9cb9c7ba50bc10a, type: 3}
   scoreSound: {fileID: 8300000, guid: c33f1345c4d9e61488bba879bb984e9a, type: 3}
   scoreSoundVolume: 0.5
 --- !u!114 &-2307790492141929790

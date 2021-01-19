@@ -31,8 +31,8 @@ public class Player : MonoBehaviour
     {
         Camera gameCamera = Camera.main;
 
-        xMin = gameCamera.ViewportToWorldPoint(new Vector3(0.1f, 0, 0)).x + padding;
-        xMax = gameCamera.ViewportToWorldPoint(new Vector3(0.9f, 0, 0)).x - padding;
+        xMin = gameCamera.ViewportToWorldPoint(new Vector3(0.14f, 0, 0)).x + padding;
+        xMax = gameCamera.ViewportToWorldPoint(new Vector3(0.85f, 0, 0)).x - padding;
 
         yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0.1f, 0)).y + padding;
         yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 0.2f, 0)).y - padding;
@@ -45,8 +45,8 @@ public class Player : MonoBehaviour
         /*Fire();*/
     }
 
-    // moves the Player ship
-    private void Move()
+    // moves the Player car
+    public void Move()
     {
         /* var changes its variable type depending on
         what I save in it.
@@ -64,12 +64,11 @@ public class Player : MonoBehaviour
         var deltaY = Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed;
         var newYPos = transform.position.y + deltaY;
 
-        // Clamp the ship between yMin and yMax
+        // Clamp the car between yMin and yMax
         newYPos = Mathf.Clamp(newYPos, yMin, yMax);
 
-        // move the Player ship to  the newXPos
+        // move the Player car to  the newXPos
         this.transform.position = new Vector2(newXPos, newYPos);
-
     }
 
     /*Reduses health whenever Player collides with a gameObject
@@ -107,5 +106,8 @@ public class Player : MonoBehaviour
         FindObjectOfType<SceneLoader>().LoadGameOver();
     }
 
-
+    public float GetHealth()
+    {
+        return health;
+    }
 }

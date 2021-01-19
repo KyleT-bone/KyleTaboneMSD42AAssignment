@@ -17,6 +17,7 @@ public class SceneLoader : MonoBehaviour
     {
         // To go to the game
         SceneManager.LoadScene("GameLevel1");
+        FindObjectOfType<GameSession>().ResetGame();
     }
 
     public void LoadMainMenu()

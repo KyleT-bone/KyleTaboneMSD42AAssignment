@@ -9,8 +9,7 @@ public class EnemyPathing : MonoBehaviour
 
     [SerializeField] WaveConfig waveConfig;
     // To make sure the effect won't show, if it's not applied, an error will show
-    [SerializeField] GameObject deathVFX;
-    float explosionDuration = 0f;
+    
 
     [SerializeField] AudioClip scoreSound;
     [SerializeField] [Range(0, 1)] float scoreSoundVolume = 0.25f;
@@ -68,10 +67,7 @@ public class EnemyPathing : MonoBehaviour
             // Add scoreValue to GameSession score
             FindObjectOfType<GameSession>().AddToScore(scoreValue);
             // Instantiate explosion effects
-            GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
-            // Destroy after 1 second
-            Destroy(explosion, explosionDuration);
-
+           
             AudioSource.PlayClipAtPoint(scoreSound, Camera.main.transform.position, scoreSoundVolume);
         }
     }
